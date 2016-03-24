@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'bdo_tools.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bdo',
+        'NAME': get_env_variable('BDO_DB_NAME'),
         'USER': get_env_variable('BDO_DB_USER'),
         'PASSWORD': get_env_variable('BDO_DB_PASSWORD'),
         'HOST': get_env_variable('BDO_DB_HOST'),
