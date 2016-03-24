@@ -36,6 +36,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'localhost',
     'bdo-chronicle.herokuapp.com',
+    'bdo.zachsommers.com',
 ]
 
 
