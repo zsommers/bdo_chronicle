@@ -33,7 +33,10 @@ SECRET_KEY = get_env_variable('DJANGO_SECRET_KEY')
 
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    'bdo-chronicle.herokuapp.com',
+]
 
 
 # Application definition

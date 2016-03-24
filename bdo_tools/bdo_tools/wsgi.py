@@ -11,7 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-print('~~~~~~{}.format(os.path.abspath(os.path.curdir)))
+print('~~~~~~{}'.format(os.path.abspath(os.path.curdir)))
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bdo_tools.settings")
 
