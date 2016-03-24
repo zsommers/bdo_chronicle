@@ -1,1 +1,1 @@
-web: gunicorn bdo_tools.bdo_tools.wsgi --log-file -
+web: cd bdo_tools; gunicorn bdo_tools.wsgi --log-file -
