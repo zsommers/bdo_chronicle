@@ -5,3 +5,5 @@ django_template_settings = [x for x in TEMPLATES if x['BACKEND'] == 'django.temp
 django_template_settings['OPTIONS']['debug'] = True
 
 INSTALLED_APPS += ['debug_toolbar']
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

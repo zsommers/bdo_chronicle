@@ -86,3 +86,6 @@ ENV/
 
 # No DBs
 *.sqlite3
+
+# Django static files
+bdo_tools/staticfiles/
