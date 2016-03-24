@@ -1,4 +1,5 @@
 Django>=1.9.4,<2.0
 django-filter>=0.13.0,<0.14
+docutils>=0.12,<0.13
 Markdown>=2.6.6,<2.7
 psycopg2>=2.6.1,<2.7
