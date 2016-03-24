@@ -1,3 +1,5 @@
 # This is for Heroku and breaks the nice multiple requirements setup
 
 -r requirements/base.txt
+
+gunicorn>=19.4.5,<19.5
