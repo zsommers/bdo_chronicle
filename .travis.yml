@@ -1,10 +1,12 @@
 language: python
 python:
-#   - "3.2"
-#   - "3.3"
-#   - "3.4"
-  - "3.5"
-# command to install dependencies
-install: "pip install -r requirements/base.txt"
-# command to run tests
+- '3.5'
+install: pip install -r requirements/base.txt
 script: nosetests
+deploy:
+  provider: heroku
+  api_key:
+    secure: FgBn/Y/40ZC48cWxbfEFDjnO+gxkoAHf7IF05HOPNXXzuyvNJ1PXev4iVrthjvem+eBp2+cFd2Miisk1GJiMV5g30+U8Wo7FyhIEm18VIVFnNIVJKrtrw9p7rEZFGb9ImkNv/ImkrB6lFnR9CcLdv8eZ3GYqNwVqJYHGKwDqnxBtIC1GF8V8ChRfF6wpcb/WMuUPBwQjq9UQSLD9VvWyoJGi1eXjm3urho/67/3LJfvA5o8Tz+NwLg6rMi/rvOqKIH2Tlw24TBiLcMmfTj0L4CwzxRkpcWLu9NXcf5CQQpIMnlKCAkdPF2iP3tTe293YY5+G+LzqtYRrPYrkoL5sh7AfrjPBq5jhPruL8pUtizMFuWonyzAYlPiIvDgAHFN4K8vnSCEJJgqS98b0hd8XLJ1WHQ2Cmo/jpGxz4WSteUY9yd+fit/8rQkB79RHMIbACcmMi1nENvqEct2LbPZI6Ighk0cyE2fE0pKNtm7D1FaKD1oDGXxYN5j1rq9JXWgKKjnaW6AE2xQUAHAa0nV9rPlEue02plv1HBruAGuBfh1C+RwAbOw2cLIKzM8QCwu6PdbIqKE+Q78FPhyWK78NWK85fx7VmoV+wa82Xw2aSNiv+IxRWuhoEOItTyphXsJa3rHhI48rCDKKFg3IKBKT6F/378t70sr9xdJ9jHUG82s=
+  app: bdo-chronicle
+  on:
+    repo: zsommers/bdo_chronicle
