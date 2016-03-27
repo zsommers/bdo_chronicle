@@ -109,6 +109,10 @@ class PropertyStation(models.Model):
                                 on_delete=models.CASCADE)
     max_level = models.IntegerField()
 
+    def __str__(self):
+        return "Property: {} - Station: {}".format(self.property,
+         self.station)
+
     class Meta:
         verbose_name_plural = 'property stations'
 
