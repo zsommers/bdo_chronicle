@@ -1,4 +1,6 @@
 
+from .base import *
+
 # Connect to a different Heroku DB for Travis testing
 DATABASES = {
     'default': {
