@@ -1,3 +1,5 @@
+# Thanks to https://gist.github.com/gregsadetsky/5018173
+
 """
 To use this, run:
 heroku addons:add heroku-postgresql:dev

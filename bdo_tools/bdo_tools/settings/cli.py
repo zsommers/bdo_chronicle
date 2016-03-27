@@ -13,4 +13,5 @@ DATABASES = {
     }
 }
 
-TEST_RUNNER = 'python.path.to.test_suite_runner.HerokuTestSuiteRunner'
+# Thanks to https://gist.github.com/gregsadetsky/5018173
+TEST_RUNNER = 'bdo_tools.heroku.test_suite_runner.HerokuTestSuiteRunner'
