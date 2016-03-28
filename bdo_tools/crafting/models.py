@@ -40,12 +40,12 @@ class Recipe(models.Model):
     modified = models.DateTimeField(auto_now=True)
 
     name = models.CharField(max_length=100)
-    input_materials = models.ManyToManyField(Material,
-                                             related_name='input_recipes')
-    station = models.ForeignKey(Station,
-                                related_name='recipes')
-    output_materials = models.ManyToManyField(Material,
-                                              related_name='output_recipes')
+    # input_materials = models.ManyToManyField(Material,
+    #                                          related_name='input_recipes')
+    # station = models.ForeignKey(Station,
+    #                             related_name='recipes')
+    # output_materials = models.ManyToManyField(Material,
+    #                                           related_name='output_recipes')
 
     def __str__(self):
         return self.name
