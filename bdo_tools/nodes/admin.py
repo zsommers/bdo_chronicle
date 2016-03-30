@@ -88,6 +88,52 @@ class ResourceAdmin(admin.ModelAdmin):
 
 
 class PropertyAdmin(admin.ModelAdmin):
+    # List Options
+    list_display = ('name', 'parent_property', 'node', 'get_territory',
+                    'get_station_1', 'get_station_2', 'get_station_3',
+                    'get_station_4', 'get_station_5')
+
+    def get_territory(self, obj):
+        return obj.node.territory
+    get_territory.short_description = 'Territory'
+    get_territory.admin_order_field = 'node__territory__name'
+
+    def get_station_1(self, obj):
+        if obj.stations.count() >= 1:
+            return obj.stations.all()[0]
+        else:
+            return None
+    get_station_1.short_description = 'Station 1'
+
+    def get_station_2(self, obj):
+        if obj.stations.count() >= 2:
+            return obj.stations.all()[1]
+        else:
+            return None
+    get_station_2.short_description = 'Station 2'
+
+    def get_station_3(self, obj):
+        if obj.stations.count() >= 3:
+            return obj.stations.all()[2]
+        else:
+            return None
+    get_station_3.short_description = 'Station 3'
+
+    def get_station_4(self, obj):
+        if obj.stations.count() >= 4:
+            return obj.stations.all()[3]
+        else:
+            return None
+    get_station_4.short_description = 'Station 4'
+
+    def get_station_5(self, obj):
+        if obj.stations.count() >= 5:
+            return obj.stations.all()[4]
+        else:
+            return None
+    get_station_5.short_description = 'Station 5'
+
+    # Detail Options
     inlines = [PropertyStationInline]
 
 #
