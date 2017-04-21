@@ -2,7 +2,7 @@
 
 BDO Chronicle is a utility web site for the game [Black Desert Online](https://www.blackdesertonline.com/). It currently deals with **Nodes** and **Crafting**, although future endeavors can't be ruled out.
 
-![Build Status](https://travis-ci.org/zsommers/bdo_chronicle.svg?branch=master) ![Coverage Status](https://coveralls.io/repos/github/zsommers/bdo_chronicle/badge.svg?branch=develop)
+![Build Status](https://travis-ci.org/zsommers/bdo_chronicle.svg?branch=master) ![Coverage Status](https://coveralls.io/repos/github/zsommers/bdo_chronicle/badge.svg?branch=master)
 
 ## Development
 This is currently being developed by one person, so while [Issues](https://github.com/zsommers/bdo_chronicle/issues) requesting features are welcome it may take a while. If you are interested in contributing, feel free to fork this repo and make pull requests.

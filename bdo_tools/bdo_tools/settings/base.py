@@ -43,6 +43,8 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'grappelli',
+    'nested_admin',
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.auth',
@@ -155,3 +157,12 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+# Grappelli
+# http://django-grappelli.readthedocs.org/en/latest/index.html
+
+GRAPPELLI_ADMIN_TITLE = "BDO Chronicle Administration"
+GRAPPELLI_CLEAN_INPUT_TYPES = False
+
+# Nested Admin
+# https://github.com/theatlantic/django-nested-admin

@@ -3,6 +3,10 @@ from django.db import models
 
 
 class Kingdom(models.Model):
+    """
+    One of the major kingdoms in the game which contains a set of
+    :model:`nodes.Territory`.
+    """
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
@@ -13,6 +17,10 @@ class Kingdom(models.Model):
 
 
 class Territory(models.Model):
+    """
+    A subdivision and child of :model:`nodes.Kingdom`. Territorys have a set of
+    :model:`nodes.Node`.
+    """
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
@@ -29,6 +37,14 @@ class Territory(models.Model):
 
 
 class Node(models.Model):
+    """
+    A point in the network of Nodes. Nodes are connected to other
+    :model:`nodes.Node` and exist within a :model:`nodes.Territory`. Hub nodes
+    are the starting points for node networks. Non-hub nodes require an
+    investment of contribution points with the node manager. Additionally,
+    many Nodes have a set of :model:`nodes.Property` and/or a one or two
+    :model:`nodes.Resource`.
+    """
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
@@ -59,6 +75,10 @@ class Node(models.Model):
 
 
 class Resource(models.Model):
+    """
+    Resources are attached to :model:`nodes.Node` and can be exploited by NPC
+    workers.
+    """
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
@@ -77,6 +97,11 @@ class Resource(models.Model):
 
 
 class Property(models.Model):
+    """
+    Properties belong to :model:`nodes.Node`. They can be rented in exchange for
+    contribution points and put to a variety of uses, which are detailed by
+    :model:`nodes.PropertyStation`.
+    """
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
@@ -100,6 +125,11 @@ class Property(models.Model):
 
 
 class PropertyStation(models.Model):
+    """
+    PropertyStations define the possible uses of a :model:`nodes.Property`. They
+    show which :model:`crafting.Station` are available and what the maximum
+    level is.
+    """
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
