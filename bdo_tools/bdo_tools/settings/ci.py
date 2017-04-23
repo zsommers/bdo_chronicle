@@ -1,5 +1,5 @@
-
-from .base import *
+from .base import DATABASES, get_env_variable
+from .base import *  # NOQA
 
 # Connect to a different Heroku DB for Travis testing
 DATABASES['default']['TEST'] = {

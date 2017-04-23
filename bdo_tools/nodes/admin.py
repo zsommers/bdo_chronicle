@@ -1,6 +1,5 @@
 from django import forms
 from django.contrib import admin
-from django.core.urlresolvers import reverse
 import nested_admin
 
 from . import models
@@ -70,6 +69,7 @@ class NodeAdmin(nested_admin.NestedModelAdmin):
 
     def get_kingdom(self, obj):
         return obj.territory.kingdom.name
+
     get_kingdom.short_description = 'Kingdom'
     get_kingdom.admin_order_field = 'territory__kingdom__name'
 
