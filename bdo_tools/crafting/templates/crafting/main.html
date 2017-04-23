@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Crafting</h1>
+        <p>The app is focused on the various aspects of crafting in Black Desert Online</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Materials</h2>
+            <p>These are the resources available throughout the world of Black Desert Online.</p>
+            <p><a class="btn btn-secondary" href="{% url 'crafting:materials:list' %}" role="button">See List &raquo;</a></p>
+        </div>
+        <div class="col">
+            <h2>Recipes</h2>
+            <p>These are not yet implemented. They will eventually be all the recipes for crafting materials and other items.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">See List &raquo;</a></p>
+       </div>
+        <div class="col">
+            <h2>Stations</h2>
+            <p>These are the crafting stations found in houses throughout Black Desert Online.<p>
+            <p><a class="btn btn-secondary" href="#" role="button">See List &raquo;</a></p>
+       </div>
+    </div>
+</div>
+{% endblock content %}
