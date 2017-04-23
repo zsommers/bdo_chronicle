@@ -1,13 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'crafting/detail.html' %}
 
-{% block content %}
-<div class="container">
-    <div class="my-3">
-        <h1 class="display-4">{{ object.name }}</h1>
-    </div>
-    <hr>
-    <p><a class="btn btn-secondary" role="button" href="{% url 'crafting:materials:list' %}">
-        &laquo; Back to List
-    </a></p>
-</div>
-{% endblock content %}
+{% block title %}
+{{ object.name }}
+{% endblock %}
+
+{% block list-url %}
+{% url 'crafting:stations:list' %}
+{% endblock %}
