@@ -1,0 +1,15 @@
+{% extends 'crafting/list.html' %}
+
+{% block model-name %}
+Station
+{% endblock model-name %}
+
+{% block table-headers %}
+<th>Name</th>
+{% endblock table-headers %}
+
+{% block detail-link %}{% url 'crafting:stations:detail' pk=object.id %}{% endblock detail-link %}
+
+{% block table-rows %}
+<td>{{ object.name }}</td>
+{% endblock table-rows %}
