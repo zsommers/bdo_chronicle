@@ -8,10 +8,14 @@ kingdoms_patterns = [
     url(r'^$', ListView.as_view(model=models.Kingdom), name='list'),
 ]
 
+territories_patterns = [
+    url(r'^(?P<pk>[0-9]+)/$', DetailView.as_view(model=models.Territory), name='detail'),
+    url(r'^$', ListView.as_view(model=models.Territory), name='list'),
+]
+
 app_name = 'nodes'
 urlpatterns = [
     url(r'^kingdoms/', include(kingdoms_patterns, namespace='kingdoms')),
-    #  url(r'^recipes/', include(recipes_patterns, namespace='recipes')),
-    #  url(r'^stations/', include(stations_patterns, namespace='stations')),
+    url(r'^territories/', include(territories_patterns, namespace='territories')),
     url(r'^$', TemplateView.as_view(template_name='nodes/main.html'), name='main'),
 ]

@@ -1,0 +1,17 @@
+{% extends 'nodes/list.html' %}
+
+{% block model-name %}
+Territory
+{% endblock model-name %}
+
+{% block table-headers %}
+<th>Name</th>
+<th>Kingdom</th>
+{% endblock table-headers %}
+
+{% block detail-link %}{% url 'nodes:territories:detail' pk=object.id %}{% endblock detail-link %}
+
+{% block table-rows %}
+<td>{{ object.name }}</td>
+<td>{{ object.kingdom.name }}</td>
+{% endblock table-rows %}
