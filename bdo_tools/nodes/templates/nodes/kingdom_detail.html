@@ -7,14 +7,14 @@
 {% block details %}
 <hr>
 <table class="table table-hover">
-    <thead class="thead-inverse">
+    <thead class="thead-default">
         <tr>
             <th>Territories</th>
         </tr>
     </thead>
     <tbody>
         {% for territory in object.territories.all %}
-        <tr onclick="window.location.assign('#')">
+        <tr onclick="window.location.assign('{% url 'nodes:territories:detail' pk=territory.id %}')">
             <td>{{ territory.name }}</td>
         </tr>
         {% endfor %}

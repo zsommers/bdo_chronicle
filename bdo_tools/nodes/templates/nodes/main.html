@@ -8,35 +8,59 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h2>Kingdoms</h2>
-            <p>Kingdoms are the principle geographic divisions in Black Desert Online.<p>
-            <p><a class="btn btn-secondary" href="{% url 'nodes:kingdoms:list' %}" role="button">See List &raquo;</a></p>
+<div class="container pb-3">
+    <div class="row pb-3">
+        <div class="card-deck">
+            <div class="card">
+                <h2 class="card-header">Kingdoms</h2>
+                <div class="card-block">
+                    <p>Kingdoms are the principle geographic divisions in Black Desert Online.<p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-secondary" href="{% url 'nodes:kingdoms:list' %}" role="button">See List &raquo;</a>
+                </div>
+            </div>
+            <div class="card">
+                <h2 class="card-header">Territories</h2>
+                <div class="card-block">
+                    <p>Territories are subdivions of Kingdoms and the smallest geographic divisions.<p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-secondary" href="{% url 'nodes:territories:list' %}" role="button">See List &raquo;</a>
+                </div>
+           </div>
+            <div class="card">
+                <h2 class="card-header">Nodes</h2>
+                <div class="card-block">
+                    <p>Nodes are the primary locations through Black Desert Online. They are connected to other Nodes and typically contain Resources and/or Properties.<p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-secondary" href="{% url 'nodes:main' %}" role="button">See List &raquo;</a>
+                </div>
+           </div>
         </div>
-        <div class="col">
-            <h2>Territories</h2>
-            <p>Territories are subdivions of Kingdoms and the smallest geographic divisions.<p>
-            <p><a class="btn btn-secondary" href="{% url 'crafting:recipes:list' %}" role="button">See List &raquo;</a></p>
-       </div>
-        <div class="col">
-            <h2>Nodes</h2>
-            <p>Nodes are the primary locations through Black Desert Online. They are connected to other Nodes and typically contain Resources and/or Properties.<p>
-            <p><a class="btn btn-secondary" href="{% url 'crafting:stations:list' %}" role="button">See List &raquo;</a></p>
-       </div>
     </div>
     <div class="row">
-        <div class="col">
-            <h2>Resources</h2>
-            <p>Resources are attached to a particular Node and represent a location where NPC workers can gather a <a href="{% url 'crafting:materials:list' %}">Material</a><p>
-            <p><a class="btn btn-secondary" href="{% url 'crafting:stations:list' %}" role="button">See List &raquo;</a></p>
-       </div>
-        <div class="col">
-            <h2>Properties</h2>
-            <p>Properties are rentable buildings that are attached to a Node. They often contain crafting <a href="{% url 'crafting:stations:list' %}">Stations</a>.<p>
-            <p><a class="btn btn-secondary" href="{% url 'crafting:stations:list' %}" role="button">See List &raquo;</a></p>
-       </div>
+        <div class="card-deck">
+            <div class="card">
+                <h2 class="card-header">Resources</h2>
+                <div class="card-block">
+                    <p>Resources are attached to a particular Node and represent a location where NPC workers can gather a <a href="{% url 'crafting:materials:list' %}">Material</a><p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-secondary" href="{% url 'nodes:main' %}" role="button">See List &raquo;</a>
+                </div>
+           </div>
+            <div class="card">
+                <h2 class="card-header">Properties</h2>
+                <div class="card-block">
+                    <p>Properties are rentable buildings that are attached to a Node. They often contain crafting <a href="{% url 'crafting:stations:list' %}">Stations</a>.<p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-secondary" href="{% url 'nodes:main' %}" role="button">See List &raquo;</a>
+                </div>
+           </div>
+        </div>
     </div>
 </div>
 {% endblock content %}
