@@ -1,0 +1,27 @@
+{% extends 'nodes/detail.html' %}
+
+{% block title %}
+{{ object.name }}
+{% endblock %}
+
+{% block details %}
+<hr>
+<table class="table table-hover">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Territories</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for territory in object.territories.all %}
+        <tr onclick="window.location.assign('#')">
+            <td>{{ territory.name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock details %}
+
+{% block list-url %}
+{% url 'nodes:kingdoms:list' %}
+{% endblock %}

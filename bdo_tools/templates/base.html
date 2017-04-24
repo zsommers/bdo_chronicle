@@ -36,11 +36,19 @@
         <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-lable="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="{% url 'crafting:main' %}">BDO Chronicle</a>
+        <a class="navbar-brand" href="{% url 'main' %}">BDO Chronicle</a>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+                <li class="nav-item {% if 'crafting' in request.path %}active{% endif %}" id="crafting-nav">
                     <a class="nav-link" href="{% url 'crafting:main' %}">Crafting</a>
+                </li>
+                <li class="nav-item {% if 'nodes' in request.path %}active{% endif %}" id="nodes-nav">
+                    <a class="nav-link" href="{% url 'nodes:main' %}">Nodes</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
                 </li>
             </ul>
         </div>

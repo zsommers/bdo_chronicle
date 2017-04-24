@@ -92,8 +92,7 @@ class Resource(models.Model):
 
     def __str__(self):
         return 'Resource {} at Node {}'.format(self.material.name,
-                                              self.node.name)
-
+                                               self.node.name)
 
 
 class Property(models.Model):
@@ -110,9 +109,9 @@ class Property(models.Model):
                              on_delete=models.CASCADE,
                              related_name='properties')
     parent_property = models.ForeignKey('self',
-                                         null=True,
-                                         blank=True,
-                                         related_name='child_properties')
+                                        null=True,
+                                        blank=True,
+                                        related_name='child_properties')
     stations = models.ManyToManyField('crafting.Station',
                                       through='PropertyStation',
                                       related_name='properties')
@@ -140,12 +139,10 @@ class PropertyStation(models.Model):
     max_level = models.IntegerField()
 
     def __str__(self):
-        return "Property: {} - Station: {}".format(self.property,
-         self.station)
+        return "Property: {} - Station: {}".format(self.property, self.station)
 
     class Meta:
         verbose_name_plural = 'property stations'
-
 
     # TODO: Some sort of fancy many to many to crafting.stations
 

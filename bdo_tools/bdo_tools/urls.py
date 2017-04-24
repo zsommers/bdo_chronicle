@@ -25,8 +25,9 @@ urlpatterns = [
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^crafting/', include('crafting.urls', namespace='crafting')),
+    url(r'^nodes/', include('nodes.urls', namespace='nodes')),
     # url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^$', RedirectView.as_view(pattern_name='crafting:main')),
+    url(r'^$', RedirectView.as_view(pattern_name='nodes:main'), name='main'),
 ]
 
 # Include Django Debug Toolbar if dev
