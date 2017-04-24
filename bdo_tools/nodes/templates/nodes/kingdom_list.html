@@ -1,0 +1,15 @@
+{% extends 'nodes/list.html' %}
+
+{% block model-name %}
+Kingdom
+{% endblock model-name %}
+
+{% block table-headers %}
+<th>Name</th>
+{% endblock table-headers %}
+
+{% block detail-link %}{% url 'nodes:kingdoms:detail' pk=object.id %}{% endblock detail-link %}
+
+{% block table-rows %}
+<td>{{ object.name }}</td>
+{% endblock table-rows %}
