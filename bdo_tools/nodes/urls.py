@@ -13,9 +13,15 @@ territories_patterns = [
     url(r'^$', ListView.as_view(model=models.Territory), name='list'),
 ]
 
+nodes_patterns = [
+    url(r'^(?P<pk>[0-9]+)/$', DetailView.as_view(model=models.Node), name='detail'),
+    url(r'^$', ListView.as_view(model=models.Node), name='list'),
+]
+
 app_name = 'nodes'
 urlpatterns = [
     url(r'^kingdoms/', include(kingdoms_patterns, namespace='kingdoms')),
     url(r'^territories/', include(territories_patterns, namespace='territories')),
+    url(r'^nodes/', include(nodes_patterns, namespace='nodes')),
     url(r'^$', TemplateView.as_view(template_name='nodes/main.html'), name='main'),
 ]

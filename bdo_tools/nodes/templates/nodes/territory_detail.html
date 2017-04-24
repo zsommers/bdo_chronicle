@@ -6,34 +6,43 @@
 
 {% block details %}
 <hr>
-<div class="row">
-    <div class="card ml-3 mb-3">
-        <h2 class="card-header">Kingdom</h2>
+<div class="card-deck mb-3">
+    <div class="card">
+        <h4 class="card-header">Kingdom</h4>
         <div class="card-block">
-            {{ object.kingdom.name }}
+            <a class="card-link" href="{% url 'nodes:kingdoms:detail' pk=object.kingdom.id %}">
+                {{ object.kingdom.name }}
+            </a>
         </div>
     </div>
 </div>
-<table class="table table-hover">
-    <thead class="thead-default">
-        <tr>
-            <th>Node Name</th>
-            <th>Is Hub?</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for node in object.nodes.all %}
-        <tr onclick="window.location.assign('#')">
-            <td>{{ node.name }}</td>
-            <td>
-                {% if node.is_hub %}
-                <i class="fa fa-check"></i>
-                {% endif %}
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="card-deck mb3">
+    <div class="card">
+    <h4 class="card-header">Nodes in {{ object.name }}</h4>
+    <div class="card-block">
+    <table class="table table-hover">
+        <thead class="thead-default">
+            <tr>
+                <th>Node Name</th>
+                <th>Is Hub?</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for node in object.nodes.all %}
+            <tr onclick="window.location.assign('{% url 'nodes:nodes:detail' pk=node.id %}')">
+                <td>{{ node.name }}</td>
+                <td>
+                    {% if node.is_hub %}
+                    <i class="fa fa-check"></i>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+</div>
 {% endblock details %}
 
 {% block list-url %}
