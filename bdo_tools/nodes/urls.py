@@ -18,10 +18,16 @@ nodes_patterns = [
     url(r'^$', ListView.as_view(model=models.Node), name='list'),
 ]
 
+properties_patterns = [
+    url(r'^(?P<pk>[0-9]+)/$', DetailView.as_view(model=models.Property), name='detail'),
+    url(r'^$', ListView.as_view(model=models.Property), name='list'),
+]
+
 app_name = 'nodes'
 urlpatterns = [
     url(r'^kingdoms/', include(kingdoms_patterns, namespace='kingdoms')),
     url(r'^territories/', include(territories_patterns, namespace='territories')),
     url(r'^nodes/', include(nodes_patterns, namespace='nodes')),
+    url(r'^properties/', include(properties_patterns, namespace='properties')),
     url(r'^$', TemplateView.as_view(template_name='nodes/main.html'), name='main'),
 ]

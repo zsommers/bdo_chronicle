@@ -4,6 +4,38 @@
 {{ object.name }}
 {% endblock %}
 
+{% block details %}
+<div class="card-deck mb-3">
+    <div class="card">
+        <h4 class="card-header">Properties with {{ object.name }}</h4>
+        <div class="card-block">
+            <table class="table table-hover mb-0">
+                <thead class="thead-default">
+                    <tr>
+                        <th>Name</th>
+                        <th>Node</th>
+                        <th>Territory</th>
+                        <th>Kingdom</th>
+                        <th>Max Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for property_station in object.propertystation_set.all %}
+                    <tr onclick="window.location.assign('{% url 'nodes:properties:detail' pk=property_station.property.id %}')">
+                        <td>{{ property_station.property.name }}</td>
+                        <td>{{ property_station.property.node.name }}</td>
+                        <td>{{ property_station.property.node.territory.name }}</td>
+                        <td>{{ property_station.property.node.territory.kingdom.name }}</td>
+                        <td>{{ property_station.max_level }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock details %}
+
 {% block list-url %}
 {% url 'crafting:stations:list' %}
 {% endblock %}
