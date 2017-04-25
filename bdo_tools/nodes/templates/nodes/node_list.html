@@ -1,0 +1,25 @@
+{% extends 'nodes/list.html' %}
+
+{% block model-name %}
+Node
+{% endblock model-name %}
+
+{% block table-headers %}
+<th>Name</th>
+<th>Territory</th>
+<th>Kingdom</th>
+<th>Is Hub?</th>
+{% endblock table-headers %}
+
+{% block detail-link %}{% url 'nodes:nodes:detail' pk=object.id %}{% endblock detail-link %}
+
+{% block table-rows %}
+<td>{{ object.name }}</td>
+<td>{{ object.territory.name }}</td>
+<td>{{ object.territory.kingdom.name }}</td>
+<td>
+    {% if object.is_hub %}
+    <i class="fa fa-check"></i>
+    {% endif %}
+</td>
+{% endblock table-rows %}

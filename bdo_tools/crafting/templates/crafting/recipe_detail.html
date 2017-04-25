@@ -1,0 +1,9 @@
+{% extends 'crafting/detail.html' %}
+
+{% block title %}
+{{ object.name }}
+{% endblock %}
+
+{% block list-url %}
+{% url 'crafting:recipes:list' %}
+{% endblock %}

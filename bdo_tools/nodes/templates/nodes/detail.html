@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="my-3">
+        <h1 class="display-4">{% block title %}{% endblock %}</h1>
+    </div>
+    {% block details %}
+    {% endblock %}
+    <hr>
+    <p class="pb-3"><a class="btn btn-secondary" role="button" href="{% block list-url %}{% endblock %}">
+        &laquo; Back to List
+    </a></p>
+</div>
+{% endblock content %}

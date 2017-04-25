@@ -1,0 +1,34 @@
+{% extends 'nodes/detail.html' %}
+
+{% block title %}
+{{ object.name }}
+{% endblock %}
+
+{% block details %}
+<hr>
+<div class="card-deck">
+    <div class="card">
+        <h4 class="card-header">Territories in {{ object.name }}</h4>
+        <div class="card-block">
+            <table class="table table-hover mb-0">
+                <thead class="thead-default">
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for territory in object.territories.all %}
+                    <tr onclick="window.location.assign('{% url 'nodes:territories:detail' pk=territory.id %}')">
+                        <td>{{ territory.name }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock details %}
+
+{% block list-url %}
+{% url 'nodes:kingdoms:list' %}
+{% endblock %}
