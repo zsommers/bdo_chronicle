@@ -10,13 +10,17 @@
     <div class="card">
         <h4 class="card-header">Kingdom</h4>
         <div class="card-block">
-            {{ object.territory.kingdom.name }}
+            <a class="card-link" href="{% url 'nodes:kingdoms:detail' pk=object.territory.kingdom.pk %}">
+                {{ object.territory.kingdom.name }}
+            </a>
         </div>
     </div>
     <div class="card">
         <h4 class="card-header">Territory</h4>
         <div class="card-block">
-            {{ object.territory.name }}
+            <a class="card-link" href="{% url 'nodes:territories:detail' pk=object.territory.pk %}">
+                {{ object.territory.name }}
+            </a>
         </div>
     </div>
     <div class="card">
@@ -46,7 +50,7 @@
     <div class="card">
         <h4 class="card-header">Connected Nodes</h4>
         <div class="card-block">
-            <table class="table table-hover">
+            <table class="table table-hover mb-0">
                 <thead class="thead-default">
                     <tr>
                         <th>Node Name</th>
@@ -71,7 +75,7 @@
     <div class="card">
         <h4 class="card-header">Resources</h4>
         <div class="card-block">
-            <table class="table table-hover">
+            <table class="table table-hover mb-0">
                 <thead class="thead-default">
                     <tr>
                         <th>Material</th>
@@ -92,7 +96,7 @@
     <div class="card">
         <h4 class="card-header">Properties</h4>
         <div class="card-block">
-            <table class="table table-hover">
+            <table class="table table-hover mb-0">
                 <thead class="thead-default">
                     <tr>
                         <th>Name</th>
@@ -101,7 +105,7 @@
                 </thead>
                 <tbody>
                     {% for property in object.properties.all %}
-                    <tr onclick="window.location.assign('{% url 'nodes:nodes:detail' pk=property.id %}')">
+                    <tr onclick="window.location.assign('{% url 'nodes:properties:detail' pk=property.id %}')">
                         <td>{{ property.name }}</td>
                         <td>{{ property.parent_property.name }}</td>
                     </tr>
@@ -114,5 +118,5 @@
 {% endblock details %}
 
 {% block list-url %}
-{% url 'nodes:territories:list' %}
+{% url 'nodes:nodes:list' %}
 {% endblock %}

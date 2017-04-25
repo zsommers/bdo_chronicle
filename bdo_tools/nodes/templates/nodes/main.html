@@ -29,6 +29,10 @@
                     <a class="btn btn-secondary" href="{% url 'nodes:territories:list' %}" role="button">See List &raquo;</a>
                 </div>
            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card-deck">
             <div class="card">
                 <h2 class="card-header">Nodes</h2>
                 <div class="card-block">
@@ -38,26 +42,13 @@
                     <a class="btn btn-secondary" href="{% url 'nodes:nodes:list' %}" role="button">See List &raquo;</a>
                 </div>
            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="card-deck">
-            <div class="card">
-                <h2 class="card-header">Resources</h2>
-                <div class="card-block">
-                    <p>Resources are attached to a particular Node and represent a location where NPC workers can gather a <a href="{% url 'crafting:materials:list' %}">Material</a><p>
-                </div>
-                <div class="card-footer">
-                    <a class="btn btn-secondary" href="{% url 'nodes:main' %}" role="button">See List &raquo;</a>
-                </div>
-           </div>
             <div class="card">
                 <h2 class="card-header">Properties</h2>
                 <div class="card-block">
                     <p>Properties are rentable buildings that are attached to a Node. They often contain crafting <a href="{% url 'crafting:stations:list' %}">Stations</a>.<p>
                 </div>
                 <div class="card-footer">
-                    <a class="btn btn-secondary" href="{% url 'nodes:main' %}" role="button">See List &raquo;</a>
+                    <a class="btn btn-secondary" href="{% url 'nodes:properties:list' %}" role="button">See List &raquo;</a>
                 </div>
            </div>
         </div>
