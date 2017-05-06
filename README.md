@@ -63,7 +63,8 @@ able to use the `django-admin` command.
 
 #### Running the server
 I have this project running on [Heroku](https://www.heroku.com) at
-[bdo.zachsommers.com](http://bdo.zachsommers.com/admin/). Please
+[bdo.zachsommers.com](http://bdo.zachsommers.com/). It's a free instance, so
+it may take a minute if you're the first visitor that day. Please
 [email me](bdo@zachsommers.com) if you'd like an account to check the project
 out. If you want to run your own instance, please feel free!
 
